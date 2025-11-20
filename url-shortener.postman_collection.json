@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "e42475e1-d40a-46a5-93a7-a8d35e97ef91",
+		"name": "url-shortener",
+		"description": "postman collection for the url-shortener app.\n\nif \"baseUrl\" variable is not specified you can add it in the collection variable as http://localhost:8080  \n\nIf you will not use the default 8080 port please update the \"baseUrl\" variable in the collection.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1773603"
+	},
+	"item": [
+		{
+			"name": "url shorten",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}",
+					"host": [
+						"{{baseUrl}}"
+					]
+				},
+				"description": "generate a short url based on the request sent in the body\n\nbody example:\n\n``` json\n{\n    \"originalUrl\" : \"https://www.portagecybertech.com\"\n}\n\n\n ```\n\nreturn a json as a response\n\nresponse example:\n\n``` json\n{\n    \"originalUrl\": \"https://www.portagecybertech.com\",\n    \"shortCode\": \"E86357zZl6\",\n    \"shortUrl\": \"http://localhost:8080/E86357zZl6\"\n}\n\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "get all urls",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}",
+					"host": [
+						"{{baseUrl}}"
+					]
+				},
+				"description": "fetch all Urls from the database"
+			},
+			"response": []
+		},
+		{
+			"name": "get original url",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}",
+					"host": [
+						"{{baseUrl}}"
+					]
+				},
+				"description": "fetch original Url based on the short code passed as a path variable\n\nexample: `http://localhost:8080/IqyVwTwFiOs`\n\nresponse example:\n\n``` json\n{\n    \"originalUrl\": \"https://www.portagecybertech.com\",\n    \"shortCode\": \"E86357zZl6\",\n    \"shortUrl\": \"http://localhost:8080/E86357zZl6\"\n}\n\n ```"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": ""
+		}
+	]
+}
