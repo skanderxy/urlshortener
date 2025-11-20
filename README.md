@@ -50,3 +50,7 @@ java -jar .\target\url-shortener-0.0.1-SNAPSHOT.jar
 - Import `url-shortener.postman_collection.json` into Postman for API testing.
 - Open the collection and click "View Complete Documentation" to request details.
 
+### To run unit tests
+```
+mvn test
+```
